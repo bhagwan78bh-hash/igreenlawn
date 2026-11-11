@@ -976,8 +976,7 @@
         </div>
       </div>
     </div>
-    <script id="_wau9uo">var _wau = _wau || []; _wau.push(["small", "1oyg9afltd", "9uo"]);</script><script async src="//waust.at/s.js"></script>
-  </footer>
+<script id="_wau1gl">var _wau = _wau || []; _wau.push(["dynamic", "a6zwzrcuel", "1gl", "c4302bffffff", "small"]);</script><script async src="//waust.at/d.js"></script>  </footer>
 
   <script src="script.js"></script>
 </body>
