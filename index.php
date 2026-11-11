@@ -1,919 +1,732 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>igreenlawn — The Homeowner's Lawn Care Guide</title>
-  <meta name="description" content="A practical, season-by-season lawn care guide: mowing heights, watering schedules, feeding, weed control, and troubleshooting for a greener lawn.">
-  <meta name="theme-color" content="#0f3d26">
-  <meta property="og:title" content="igreenlawn — The Homeowner's Lawn Care Guide">
-  <meta property="og:description" content="A practical, season-by-season lawn care guide: mowing heights, watering schedules, feeding, weed control, and troubleshooting.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GardenWow — The City Gardener's Field Guide</title>
+  <meta name="description" content="City garden care for balconies, windowsills and rooftops. Grow food and greenery in small spaces with GardenWow's practical field guide, plant matcher and seasonal checklists.">
+  <meta name="theme-color" content="#132419">
+  <meta name="robots" content="index, follow">
+  <meta property="og:site_name" content="GardenWow">
+  <meta property="og:image:alt" content="A lush city balcony filled with terracotta planters.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta property="og:title" content="GardenWow — The City Gardener's Field Guide">
+  <meta property="og:description" content="Small space. Wildly good growth. A practical guide to growing food and greenery in the city.">
   <meta property="og:type" content="website">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
+  <meta property="og:image" content="assets/images/hero-balcony-1000.webp">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/fraunces-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/dm-sans-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" href="assets/images/hero-balcony-1000.webp" imagesrcset="assets/images/hero-balcony-600.webp 600w, assets/images/hero-balcony-1000.webp 1000w, assets/images/hero-balcony-1400.webp 1400w" imagesizes="(max-width: 980px) 80vw, 38vw" fetchpriority="high">
+  <link rel="stylesheet" href="assets/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "GardenWow",
+    "description": "A practical city gardening guide for balconies, windowsills and rooftops.",
+    "inLanguage": "en"
+  }
+  </script>
 </head>
-<body>
+<body id="top">
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <header class="site-header" id="top">
+  <svg class="svg-sprite" aria-hidden="true" focusable="false">
+    <symbol id="i-leaf" viewBox="0 0 24 24">
+      <path d="M5 19C5 11 10 5 20 4c0 10-6 15-14 15"/>
+      <path d="M4 21c2-5 5-8 9-11"/>
+    </symbol>
+    <symbol id="i-logo" viewBox="0 0 40 40">
+      <path d="M19.5 31c0-8.5 5.2-14 13-15-1 9.2-5.2 14.2-13 15Z" fill="currentColor" stroke="none"/>
+      <path d="M19.5 31C19.5 23 14.8 17.8 7 16.8c1 9.2 5.2 14.2 12.5 14.2Z" fill="currentColor" stroke="none" opacity=".5"/>
+      <rect x="18.65" y="13.5" width="1.7" height="17.5" rx=".85" fill="currentColor"/>
+    </symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24">
+      <path d="M4 12h15M13 6l6 6-6 6"/>
+    </symbol>
+    <symbol id="i-arrow-up" viewBox="0 0 24 24">
+      <path d="M12 20V5M6 11l6-6 6 6"/>
+    </symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="4"/>
+      <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/>
+    </symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24">
+      <path d="M12 3s6 6.1 6 10.5a6 6 0 0 1-12 0C6 9.1 12 3 12 3Z"/>
+      <path d="M9.5 14.2a2.6 2.6 0 0 0 2.5 2.3"/>
+    </symbol>
+    <symbol id="i-soil" viewBox="0 0 24 24">
+      <path d="M3 9h18M3 13h18M3 17h18"/>
+      <path d="M7 9V7M15 13v-2M10 17v-2M18 9V7"/>
+    </symbol>
+    <symbol id="i-pot" viewBox="0 0 24 24">
+      <path d="M5 10h14l-1.4 10H6.4L5 10Z"/>
+      <path d="M12 10V5M12 7c1.8 0 3-1.2 3-3-1.8 0-3 1.2-3 3ZM12 6.5c-1.5 0-2.5-1-2.5-2.5 1.5 0 2.5 1 2.5 2.5Z"/>
+    </symbol>
+    <symbol id="i-feed" viewBox="0 0 24 24">
+      <path d="M12 21c-5 0-8-3.2-8-8 5 0 8 3 8 8Z"/>
+      <path d="M12 21c5 0 8-3.2 8-8-5 0-8 3-8 8Z"/>
+      <path d="M12 21V11"/>
+      <path d="M12 7c1.6 0 2.8-1.2 2.8-2.8C13.2 4.2 12 5.4 12 7ZM12 7c-1.6 0-2.8-1.2-2.8-2.8C10.8 4.2 12 5.4 12 7Z"/>
+    </symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24">
+      <rect x="3.5" y="5" width="17" height="15.5" rx="2"/>
+      <path d="M3.5 10h17M8 3v4M16 3v4"/>
+      <path d="M8 14h2M14 14h2M8 17.5h2M14 17.5h2"/>
+    </symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="8.5"/>
+      <path d="M12 7v5.5l3.5 2"/>
+    </symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24">
+      <path d="M12 3c.6 5.3 3.7 8.4 9 9-5.3.6-8.4 3.7-9 9-.6-5.3-3.7-8.4-9-9 5.3-.6 8.4-3.7 9-9Z"/>
+    </symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24">
+      <path d="M4 8h16M4 16h16"/>
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24">
+      <path d="M6 6l12 12M18 6L6 18"/>
+    </symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24">
+      <rect x="3" y="5" width="18" height="14" rx="2"/>
+      <path d="m4 7 8 6 8-6"/>
+    </symbol>
+  </svg>
+
+  <header class="site-header" data-header>
     <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="igreenlawn home">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 20C4 11 10 5 20 4c0 10-6 16-16 16Z"></path>
-            <path d="M4 20c3-5 7-8 12-10"></path>
-          </svg>
-        </span>
-        <span class="brand-name"><em>i</em>greenlawn</span>
+      <a class="brand" href="index.html" aria-label="GardenWow — home">
+        <span class="brand-mark"><svg class="icon" aria-hidden="true"><use href="#i-logo"/></svg></span>
+        <span class="brand-word">garden<em>wow</em></span>
       </a>
 
-      <div class="nav-wrap" id="site-nav">
-        <nav aria-label="Primary">
-          <ul class="nav-list">
-            <li><a href="#guide">The guide</a></li>
-            <li><a href="#seasons">Seasons</a></li>
-            <li><a href="#mowing">Mowing</a></li>
-            <li><a href="#watering">Watering</a></li>
-            <li><a href="#fixes">Fixes</a></li>
-            <li><a href="#faq">FAQ</a></li>
-          </ul>
-        </nav>
-      </div>
+      <nav class="desktop-nav" aria-label="Primary">
+        <a href="#why">The why</a>
+        <a href="#guide">The guide</a>
+        <a href="#match">Plant match</a>
+        <a href="#seasons">City seasons</a>
+        <a href="#ritual">Weekly reset</a>
+      </nav>
 
       <div class="header-actions">
-        <a class="btn btn-primary" href="#checklist">Get the checklist</a>
+        <a class="btn btn--small btn--dark header-cta" href="#guide">Start growing <span class="btn-arrow"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
+          <svg class="icon menu-icon" aria-hidden="true"><use href="#i-menu"/></svg>
+          <svg class="icon close-icon" aria-hidden="true"><use href="#i-close"/></svg>
+        </button>
       </div>
-
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
-        <svg class="icon-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
-          <path d="M4 7h16M4 12h16M4 17h16"></path>
-        </svg>
-        <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
-          <path d="M6 6l12 12M18 6 6 18"></path>
-        </svg>
-      </button>
     </div>
   </header>
 
+  <div class="mobile-menu" id="mobile-menu" hidden data-mobile-menu>
+    <nav class="mobile-nav" aria-label="Mobile">
+      <a href="#why"><span>01</span> The why</a>
+      <a href="#guide"><span>02</span> The field guide</a>
+      <a href="#match"><span>03</span> Plant match</a>
+      <a href="#seasons"><span>04</span> City seasons</a>
+      <a href="#ritual"><span>05</span> Weekly reset</a>
+      <a href="#faq"><span>06</span> Common questions</a>
+    </nav>
+    <div class="mobile-menu-foot">
+      <a class="btn btn--dark" href="#guide">Start growing <span class="btn-arrow"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+      <div class="mobile-legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="mailto:hello@gardenwow.co">hello@gardenwow.co</a>
+      </div>
+    </div>
+  </div>
+
   <main id="main">
-    <!-- ================= HERO ================= -->
     <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" data-reveal><span class="eyebrow-dot"></span> The city gardener's field guide <span class="eyebrow-edition">Vol. 01</span></p>
+          <h1 class="hero-title" id="hero-title" data-reveal>Small space.<br><span class="wild">Wildly</span> good<br>growth.</h1>
+          <p class="hero-lede" data-reveal>A practical guide to growing food and greenery in flats, balconies and borrowed corners of the city. No backyard required.</p>
+          <div class="hero-actions" data-reveal>
+            <a class="btn btn--dark" href="#guide">Explore the field guide <span class="btn-arrow"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+            <a class="text-link" href="#match">Meet your plant match <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+          <dl class="hero-stats" data-reveal>
+            <div>
+              <dt>06</dt>
+              <dd>field-guide chapters</dd>
+            </div>
+            <div>
+              <dt>18</dt>
+              <dd>city-tested plant picks</dd>
+            </div>
+            <div>
+              <dt>15<span>min</span></dt>
+              <dd>weekly reset</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero-visual" data-reveal>
+          <div class="hero-orbit" aria-hidden="true"></div>
+          <figure class="hero-frame">
+            <img src="assets/images/hero-balcony-1000.webp"
+                 srcset="assets/images/hero-balcony-600.webp 600w, assets/images/hero-balcony-1000.webp 1000w, assets/images/hero-balcony-1400.webp 1400w"
+                 sizes="(max-width: 980px) 80vw, 38vw"
+                 width="1000" height="1250"
+                 fetchpriority="high" decoding="async"
+                 alt="A city balcony filled with terracotta planters of herbs, spider plants and succulents against a deep green wall.">
+            <figcaption>A very real, very good city balcony.</figcaption>
+          </figure>
+
+          <div class="sticker" aria-hidden="true">
+            <svg viewBox="0 0 126 126">
+              <defs>
+                <path id="sticker-path" d="M63,63 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/>
+              </defs>
+              <text>
+                <textPath href="#sticker-path" startOffset="0%">SMALL SPACE · BIG GROWTH · CITY GROWN · </textPath>
+              </text>
+              <g transform="translate(51 51)">
+                <path d="M12 22c0-7 4-11 11-12 0 8-4 12-11 12Z" fill="currentColor" stroke="none"/>
+                <path d="M12 22c0-7-4-11-11-12 0 8 4 12 11 12Z" fill="currentColor" stroke="none" opacity=".5"/>
+                <path d="M12 22V8" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </g>
+            </svg>
+          </div>
+
+          <aside class="field-note" aria-label="Field note">
+            <p class="field-note-label"><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg> Field note no. 01</p>
+            <p class="field-note-quote">“Water less than you think. Check with a finger first.”</p>
+            <p class="field-note-sign">— the gardenwow rule</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Balconies <svg class="icon"><use href="#i-spark"/></svg> Windowsills <svg class="icon"><use href="#i-spark"/></svg> Rooftops <svg class="icon"><use href="#i-spark"/></svg> Shared plots <svg class="icon"><use href="#i-spark"/></svg> Stairwells <svg class="icon"><use href="#i-spark"/></svg> Kitchen counters <svg class="icon"><use href="#i-spark"/></svg></span>
+        <span>Balconies <svg class="icon"><use href="#i-spark"/></svg> Windowsills <svg class="icon"><use href="#i-spark"/></svg> Rooftops <svg class="icon"><use href="#i-spark"/></svg> Shared plots <svg class="icon"><use href="#i-spark"/></svg> Stairwells <svg class="icon"><use href="#i-spark"/></svg> Kitchen counters <svg class="icon"><use href="#i-spark"/></svg></span>
+      </div>
+    </div>
+
+    <section class="section why" id="why" aria-labelledby="why-title">
       <div class="container">
-        <div class="hero-grid">
+        <div class="section-head" data-reveal>
+          <p class="kicker">01 <span>/</span> The why</p>
+          <h2 class="display" id="why-title">No backyard.<br><em>No problem.</em></h2>
+          <p class="section-aside">A city garden is not a smaller version of a country garden. It is its own strange, generous thing.</p>
+        </div>
+
+        <div class="why-layout">
+          <div class="why-media" data-reveal>
+            <div class="why-image">
+              <img src="assets/images/herbs-900.webp" srcset="assets/images/herbs-500.webp 500w, assets/images/herbs-900.webp 900w" sizes="(max-width: 900px) 70vw, 34vw" width="900" height="1125" loading="lazy" alt="Three pots of basil lined up on a bright windowsill.">
+            </div>
+            <div class="why-stamp" aria-hidden="true">
+              <span class="why-stamp-big">1 m²</span>
+              <span class="why-stamp-small">is a garden</span>
+              <svg class="icon"><use href="#i-leaf"/></svg>
+            </div>
+            <p class="photo-caption">One windowsill, three herbs, zero excuses.</p>
+          </div>
+
+          <div class="why-copy" data-reveal>
+            <p class="lead-copy">Borrowed light, tight corners, pots that dry fast and neighbours who absolutely notice. City growing has its own rules.</p>
+            <p>GardenWow is a field guide for that reality. Less Pinterest perfection, more <em>“the basil made it through the week.”</em> Everything here is built for small spaces, real schedules and the particular joy of eating something you grew outside a window.</p>
+
+            <div class="principles">
+              <article class="principle">
+                <span class="principle-no">01</span>
+                <div>
+                  <h3>Grow the light you have</h3>
+                  <p>Watch your space for a day before you buy a plant. The sunniest spot wins.</p>
+                </div>
+              </article>
+              <article class="principle">
+                <span class="principle-no">02</span>
+                <div>
+                  <h3>Water by feel</h3>
+                  <p>A finger in the soil beats a watering schedule. Dry 3 cm down? Water.</p>
+                </div>
+              </article>
+              <article class="principle">
+                <span class="principle-no">03</span>
+                <div>
+                  <h3>Start small, repeat</h3>
+                  <p>Three pots tended well beat twenty abandoned on a ledge.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section guide" id="guide" aria-labelledby="guide-title">
+      <div class="container">
+        <div class="section-head section-head--split" data-reveal>
           <div>
-            <span class="eyebrow">The homeowner's field guide</span>
-            <h1 id="hero-title">A greener lawn,<br><em>one weekend</em> at a time.</h1>
-            <p class="lede">
-              No guesswork, no twelve-step programs. Just the six things that actually
-              matter — soil, mowing, water, feeding, weeds, and timing — explained in
-              plain language for real yards.
-            </p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="#guide">
-                Start the guide
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M5 12h14M13 6l6 6-6 6"></path>
-                </svg>
-              </a>
-              <a class="btn btn-ghost" href="#checklist">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M5 13l4 4L19 7"></path>
-                </svg>
-                See the checklist
-              </a>
-            </div>
-            <div class="hero-stats">
-              <div class="stat"><strong>12</strong><span>Month plan</span></div>
-              <div class="stat"><strong>6</strong><span>Care pillars</span></div>
-              <div class="stat"><strong>1/3</strong><span>Mow rule</span></div>
-            </div>
+            <p class="kicker">02 <span>/</span> The field guide</p>
+            <h2 class="display" id="guide-title">Six rules that do<br><em>most of the work.</em></h2>
           </div>
-
-          <div class="hero-visual" aria-hidden="true">
-            <div class="lawn-panel">
-              <div class="lawn-head">
-                <span class="pill-live"><i></i> Week 45 · Late fall</span>
-                <span class="lawn-zone">Zone 6b</span>
-              </div>
-              <div class="lawn-stripes">
-                <img class="lawn-stripes-img" src="https://images.unsplash.com/photo-1558904541-efa8c4a08931?auto=format&fit=crop&w=800&q=80" alt="Lush green lawn with clean mowing stripes" width="440" height="218">
-                <span class="sun"></span>
-                <span class="mower-mark">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="6" cy="6" r="3"></circle>
-                    <circle cx="6" cy="18" r="3"></circle>
-                    <path d="M20 4 8.1 15.9M20 20 8.1 8.1"></path>
-                  </svg>
-                </span>
-              </div>
-              <div class="lawn-rows">
-                <div class="lawn-row"><span>Soil moisture</span><b>1.3 in</b><i class="dot dot-good"></i></div>
-                <div class="lawn-row"><span>Mow height</span><b>3.0 in</b><i class="dot dot-good"></i></div>
-                <div class="lawn-row"><span>Leaf cover</span><b>Moderate</b><i class="dot dot-warn"></i></div>
-              </div>
-            </div>
-            <div class="float-card">
-              <strong>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"></path>
-                  <circle cx="12" cy="12" r="3.2"></circle>
-                </svg>
-                The one-third rule
-              </strong>
-              <p>Never cut more than a third of the blade at once. It keeps roots deep and color even.</p>
-            </div>
-          </div>
+          <p class="section-aside">Skip the shelf of half-read gardening books. These are the fundamentals that matter in a city — and the small moves that make them real.</p>
         </div>
 
-        <div class="facts">
-          <div class="facts-grid">
-            <div class="fact"><strong>1–1.5 in</strong><span>Water per week, rain included</span></div>
-            <div class="fact"><strong>2.5–4 in</strong><span>Mowing height, by grass type</span></div>
-            <div class="fact"><strong>6.0–7.0</strong><span>Ideal soil pH for most lawns</span></div>
-            <div class="fact"><strong>3–4×</strong><span>Feedings per year, not per month</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= PILLARS ================= -->
-    <section class="section" id="guide" aria-labelledby="guide-title">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Start here</span>
-          <h2 id="guide-title">Six pillars of a healthy lawn</h2>
-          <p>Most lawn problems start with one of these six. Get them roughly right and the
-            rest of the guide becomes maintenance instead of rescue work.</p>
-        </div>
-
-        <div class="pillars">
-          <article class="pillar">
-            <div class="pillar-media">
-              <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=600&q=80" alt="Rich soil and healthy growing lawn roots" loading="lazy" width="360" height="154">
+        <div class="guide-grid">
+          <article class="guide-card guide-card--dark" data-reveal>
+            <div class="guide-card-top">
+              <span class="guide-no">01 / Light</span>
+              <span class="guide-icon"><svg class="icon" aria-hidden="true"><use href="#i-sun"/></svg></span>
             </div>
-            <div class="pillar-body">
-              <div class="icon-tile" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="m12 3 9 5-9 5-9-5 9-5Z"></path>
-                  <path d="m3 13 9 5 9-5"></path>
-                </svg>
-              </div>
-              <h3>Soil first</h3>
-              <p>Grass is only as good as what it grows in. Test pH and nutrients every two to
-                three years, then fix compaction before you buy another bag of seed.</p>
-              <span class="tag">Test · aerate · amend</span>
+            <h3>Read the light first</h3>
+            <p>You can fix almost anything in a pot except the wrong light. Watch your space at 9am, noon and 4pm. Note which spots get direct sun, which get bright reflected light, and which never leave the shade.</p>
+            <div class="try-this">
+              <span>Try this</span>
+              <p>Tape a paper marker to your sunniest window for a day. That is your growing HQ.</p>
             </div>
           </article>
 
-          <article class="pillar">
-            <div class="pillar-media">
-              <img src="https://images.unsplash.com/photo-1592417817098-8f3d6910985c?auto=format&fit=crop&w=600&q=80" alt="Lawn mower cutting clean grass stripes" loading="lazy" width="360" height="154">
+          <article class="guide-card" data-reveal>
+            <div class="guide-card-top">
+              <span class="guide-no">02 / Water</span>
+              <span class="guide-icon"><svg class="icon" aria-hidden="true"><use href="#i-drop"/></svg></span>
             </div>
-            <div class="pillar-body">
-              <div class="icon-tile" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="6" cy="6" r="3"></circle>
-                  <circle cx="6" cy="18" r="3"></circle>
-                  <path d="M20 4 8.1 15.9M20 20 8.1 8.1"></path>
-                </svg>
-              </div>
-              <h3>Mow like you mean it</h3>
-              <p>A sharp blade at the right height does more for color than most products.
-                Follow the one-third rule and change direction each cut.</p>
-              <span class="tag">Sharp · tall · alternating</span>
+            <h3>Water by feel, not by calendar</h3>
+            <p>Rooftop pots can dry in a day; monsoon balconies can stay damp for a week. Push a finger 3 cm into the soil. Dry? Water slowly until it drains. Damp? Walk away.</p>
+            <div class="try-this">
+              <span>Try this</span>
+              <p>Lift the pot. A noticeably light pot is a thirsty pot.</p>
             </div>
           </article>
 
-          <article class="pillar">
-            <div class="pillar-media">
-              <img src="https://images.unsplash.com/photo-1563298723-dcfebaa392e3?auto=format&fit=crop&w=600&q=80" alt="Lawn sprinkler spraying water over healthy green grass" loading="lazy" width="360" height="154">
+          <article class="guide-card" data-reveal>
+            <div class="guide-card-top">
+              <span class="guide-no">03 / Soil</span>
+              <span class="guide-icon"><svg class="icon" aria-hidden="true"><use href="#i-soil"/></svg></span>
             </div>
-            <div class="pillar-body">
-              <div class="icon-tile" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 3s6 6.4 6 11a6 6 0 0 1-12 0c0-4.6 6-11 6-11Z"></path>
-                </svg>
-              </div>
-              <h3>Water deep, not often</h3>
-              <p>One or two long soaks a week train roots to grow down. Daily light
-                sprinkling trains them to stay near the surface — and to fail in July.</p>
-              <span class="tag">1–1.5 in · early morning</span>
+            <h3>Make soil that breathes</h3>
+            <p>Garden soil in a pot becomes a brick. Start with a loose potting mix, then add compost for food and perlite for air. Roots need oxygen as much as they need water.</p>
+            <div class="try-this">
+              <span>Try this</span>
+              <p>A simple mix: 60% potting mix, 30% compost, 10% perlite.</p>
             </div>
           </article>
 
-          <article class="pillar">
-            <div class="pillar-media">
-              <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=600&q=80" alt="Lush emerald green turf nourished by fertilizer" loading="lazy" width="360" height="154">
+          <article class="guide-card guide-card--lime" data-reveal>
+            <div class="guide-card-top">
+              <span class="guide-no">04 / Pots</span>
+              <span class="guide-icon"><svg class="icon" aria-hidden="true"><use href="#i-pot"/></svg></span>
             </div>
-            <div class="pillar-body">
-              <div class="icon-tile" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"></path>
-                  <path d="M7.5 15h9"></path>
-                </svg>
-              </div>
-              <h3>Feed the grass</h3>
-              <p>Slow-release nitrogen, applied when the grass is actively growing. More
-                fertilizer is not better — it is just more mowing and more thatch.</p>
-              <span class="tag">3–4× per year</span>
+            <h3>Give every root a way out</h3>
+            <p>Pretty pots without drainage are plant-sized bathtubs. Choose at least one drainage hole, a pot 2–3 cm wider than the root ball, and a saucer you actually empty.</p>
+            <div class="try-this">
+              <span>Try this</span>
+              <p>Raise pots on pebbles or feet so water never pools underneath.</p>
             </div>
           </article>
 
-          <article class="pillar">
-            <div class="pillar-media">
-              <img src="https://images.unsplash.com/photo-1656496832916-039d46c0cf18?auto=format&fit=crop&w=600&q=80" alt="Weeds and dandelions in grass" loading="lazy" width="360" height="154">
+          <article class="guide-card" data-reveal>
+            <div class="guide-card-top">
+              <span class="guide-no">05 / Feed</span>
+              <span class="guide-icon"><svg class="icon" aria-hidden="true"><use href="#i-feed"/></svg></span>
             </div>
-            <div class="pillar-body">
-              <div class="icon-tile" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="8" y="8" width="8" height="10" rx="4"></rect>
-                  <path d="M8 12H4M20 12h-4M8 16H4M20 16h-4M9 8 7 5M15 8l2-3M12 18v3"></path>
-                </svg>
-              </div>
-              <h3>Outcompete, then treat</h3>
-              <p>A thick lawn is the best weed control there is. Fix thin turf first, then
-                spot-treat problems instead of blanketing the whole yard.</p>
-              <span class="tag">Density beats chemicals</span>
+            <h3>Feed little, often</h3>
+            <p>Potted plants are captive diners — they cannot send roots into the neighbour's garden. Feed at half strength through the growing season, then ease off when growth slows.</p>
+            <div class="try-this">
+              <span>Try this</span>
+              <p>Feed every second watering in spring and summer. Not every day.</p>
             </div>
           </article>
 
-          <article class="pillar">
-            <div class="pillar-media">
-              <img src="https://images.unsplash.com/photo-1761819620447-10593214fdc7?auto=format&fit=crop&w=600&q=80" alt="Autumn lawn with crisp leaves and new grass seed" loading="lazy" width="360" height="154">
+          <article class="guide-card" data-reveal>
+            <div class="guide-card-top">
+              <span class="guide-no">06 / Seasons</span>
+              <span class="guide-icon"><svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg></span>
             </div>
-            <div class="pillar-body">
-              <div class="icon-tile" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="3" y="5" width="18" height="16" rx="2"></rect>
-                  <path d="M8 3v4M16 3v4M3 11h18"></path>
-                </svg>
-              </div>
-              <h3>Timing wins</h3>
-              <p>Overseed in early fall, not spring. Pre-emergent before weed seeds
-                germinate. Do the right task a few weeks late and you may as well skip it.</p>
-              <span class="tag">Calendar over effort</span>
+            <h3>Reset with the seasons</h3>
+            <p>City gardens are never “done.” Each season brings a different job: shade cloth in May, drainage checks in July, a hard prune before winter. Work with the year, not against it.</p>
+            <div class="try-this">
+              <span>Try this</span>
+              <p>At every season change, remove dead growth and top up 2 cm of compost.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- ================= SEASONS ================= -->
-    <section class="section section--tint" id="seasons" aria-labelledby="seasons-title">
+    <section class="section match" id="match" aria-labelledby="match-title">
+      <div class="match-leaf match-leaf--one" aria-hidden="true">
+        <svg viewBox="0 0 200 300"><path d="M100 300C100 180 150 80 260 20 260 150 200 250 100 300Z"/><path d="M100 300C100 200 40 120-60 70-60 180 0 260 100 300Z"/></svg>
+      </div>
+      <div class="match-leaf match-leaf--two" aria-hidden="true">
+        <svg viewBox="0 0 200 300"><path d="M100 300C100 180 150 80 260 20 260 150 200 250 100 300Z"/><path d="M100 300C100 200 40 120-60 70-60 180 0 260 100 300Z"/></svg>
+      </div>
+
       <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">The season planner</span>
-          <h2 id="seasons-title">What to do, and when</h2>
-          <p>Choose a season for the short list that matters. Exact timing shifts with
-            your climate, so treat months as a guide and grass growth as the real signal.</p>
-        </div>
-
-        <div class="season-tabs" role="tablist" aria-label="Lawn care by season">
-          <button class="season-tab" role="tab" id="tab-spring" aria-controls="panel-spring" aria-selected="true" tabindex="0">Spring</button>
-          <button class="season-tab" role="tab" id="tab-summer" aria-controls="panel-summer" aria-selected="false" tabindex="-1">Summer</button>
-          <button class="season-tab" role="tab" id="tab-fall" aria-controls="panel-fall" aria-selected="false" tabindex="-1">Fall</button>
-          <button class="season-tab" role="tab" id="tab-winter" aria-controls="panel-winter" aria-selected="false" tabindex="-1">Winter</button>
-        </div>
-
-        <div class="season-panel" id="panel-spring" role="tabpanel" aria-labelledby="tab-spring" tabindex="0">
-          <div class="season-intro">
-            <span class="season-months">March – May</span>
-            <h3>Wake it up gently</h3>
-            <p>Spring is for cleanup and setup, not for forcing growth. Let the lawn come
-              out of dormancy on its own schedule and give it what it is missing.</p>
-            <div class="season-photo">
-              <img src="https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=700&q=80" alt="Spring lawn awakening with fresh green shoots and clean edges" loading="lazy" width="460" height="168">
-            </div>
-            <div class="season-focus">
-              <b>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <circle cx="12" cy="12" r="4"></circle>
-                  <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"></path>
-                </svg>
-                Focus this season
-              </b>
-              <p>Get a soil test and apply pre-emergent when soil temperatures hold near
-                55°F — before crabgrass starts, not after you see it.</p>
-            </div>
+        <div class="section-head section-head--split match-head" data-reveal>
+          <div>
+            <p class="kicker kicker--light">03 <span>/</span> Plant match</p>
+            <h2 class="display" id="match-title">Find your kind <em>of green.</em></h2>
           </div>
-          <ul class="task-list">
+          <p class="section-aside">Tell us about your light, your space and how much you like to fuss. We will match you with three plants that stand a real chance.</p>
+        </div>
+
+        <div class="matcher" data-reveal>
+          <form class="matcher-form" data-matcher-form>
+            <fieldset class="choice-group">
+              <legend>How much light?</legend>
+              <div class="choice-row">
+                <label class="choice">
+                  <input type="radio" name="light" value="low">
+                  <span class="choice-face">Low light<small>shade, no direct sun</small></span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="light" value="medium" checked>
+                  <span class="choice-face">Bright indirect<small>light, no harsh sun</small></span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="light" value="full">
+                  <span class="choice-face">Full sun<small>4+ hours direct</small></span>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="choice-group">
+              <legend>What kind of space?</legend>
+              <div class="choice-row">
+                <label class="choice">
+                  <input type="radio" name="space" value="sill">
+                  <span class="choice-face">A windowsill<small>small footprint</small></span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="space" value="rail" checked>
+                  <span class="choice-face">A shelf or rail<small>medium footprint</small></span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="space" value="floor">
+                  <span class="choice-face">Floor or roof<small>room to spread</small></span>
+                </label>
+              </div>
+            </fieldset>
+
+            <fieldset class="choice-group">
+              <legend>How much do you like to fuss?</legend>
+              <div class="choice-row">
+                <label class="choice">
+                  <input type="radio" name="effort" value="easy">
+                  <span class="choice-face">Barely there<small>tough as old boots</small></span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="effort" value="weekly" checked>
+                  <span class="choice-face">A weekly check-in<small>steady, simple care</small></span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="effort" value="hands">
+                  <span class="choice-face">I like to fuss<small>pruning, feeding, chats</small></span>
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="matcher-foot">
+              <p><svg class="icon" aria-hidden="true"><use href="#i-spark"/></svg> 18 plants, filtered by light, room and effort.</p>
+              <button class="reset-link" type="button" data-match-reset>Reset choices</button>
+            </div>
+          </form>
+
+          <div class="match-results">
+            <div class="results-head">
+              <p class="results-label">Your three best bets</p>
+              <p class="results-count" data-match-count>—</p>
+            </div>
+            <div class="result-list" data-match-results></div>
+            <p class="sr-only" aria-live="polite" data-match-status></p>
+            <p class="match-disclaimer">A starting point, not a guarantee. Every windowsill has its own microclimate — watch what your plant tells you.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section seasons" id="seasons" aria-labelledby="seasons-title">
+      <div class="container">
+        <div class="section-head section-head--split" data-reveal>
+          <div>
+            <p class="kicker">04 <span>/</span> The city calendar</p>
+            <h2 class="display" id="seasons-title">A year <em>in pots.</em></h2>
+          </div>
+          <p class="section-aside">Built for a warm, monsoon-driven year. Your city may run a few weeks ahead or behind — watch your plants, not just the calendar.</p>
+        </div>
+
+        <div class="season-tabs" role="tablist" aria-label="City gardening seasons" data-season-tabs>
+          <button class="season-tab" id="tab-spring" role="tab" aria-selected="true" aria-controls="panel-spring" tabindex="0" data-season="spring"><span>01</span> Spring <small>Feb–Mar</small></button>
+          <button class="season-tab" id="tab-summer" role="tab" aria-selected="false" aria-controls="panel-summer" tabindex="-1" data-season="summer"><span>02</span> Summer <small>Apr–Jun</small></button>
+          <button class="season-tab" id="tab-monsoon" role="tab" aria-selected="false" aria-controls="panel-monsoon" tabindex="-1" data-season="monsoon"><span>03</span> Monsoon <small>Jul–Sep</small></button>
+          <button class="season-tab" id="tab-autumn" role="tab" aria-selected="false" aria-controls="panel-autumn" tabindex="-1" data-season="autumn"><span>04</span> Autumn <small>Oct–Nov</small></button>
+          <button class="season-tab" id="tab-winter" role="tab" aria-selected="false" aria-controls="panel-winter" tabindex="-1" data-season="winter"><span>05</span> Winter <small>Dec–Jan</small></button>
+        </div>
+
+        <div class="season-panels" data-season-panels>
+          <div class="season-panel" id="panel-spring" role="tabpanel" aria-labelledby="tab-spring" tabindex="0">
+            <div class="season-intro">
+              <p class="season-index">01</p>
+              <h3>Spring <span>Feb – Mar</span></h3>
+              <p class="season-desc">Everything wakes up. Growth is fast, the light is kind, and pest pressure is still low. This is the season to be ambitious.</p>
+              <div class="season-weather"><svg class="icon" aria-hidden="true"><use href="#i-sun"/></svg> Mild days · rising light</div>
+            </div>
+            <div class="season-lists">
+              <div class="season-list">
+                <h4><span class="season-list-icon">01</span> Sow now</h4>
+                <ul><li>Basil, mint and coriander</li><li>Cherry tomatoes and chillies</li><li>Marigolds for colour and pests</li><li>Leafy greens before the heat</li></ul>
+              </div>
+              <div class="season-list">
+                <h4><span class="season-list-icon">02</span> Tend now</h4>
+                <ul><li>Repot anything root-bound</li><li>Top up 2 cm of compost</li><li>Set a weekly watering rhythm</li><li>Move sun-lovers to the brightest spot</li></ul>
+              </div>
+              <div class="season-list">
+                <h4><span class="season-list-icon">03</span> Watch for</h4>
+                <ul><li>Aphids on soft new tips</li><li>Leggy seedlings reaching for light</li><li>Cold snaps in northern cities</li><li>Dry pots after windy days</li></ul>
+              </div>
+            </div>
+            <p class="city-note"><span>City note</span> East-facing balconies are gold in spring. Give tomatoes their biggest pot now — they hate being moved later.</p>
+          </div>
+
+          <div class="season-panel" id="panel-summer" role="tabpanel" aria-labelledby="tab-summer" tabindex="0" hidden>
+            <div class="season-intro">
+              <p class="season-index">02</p>
+              <h3>Summer <span>Apr – Jun</span></h3>
+              <p class="season-desc">The test. Pots dry fast, afternoon sun is brutal, and water can evaporate before it reaches the roots. Shade and mulch are your friends.</p>
+              <div class="season-weather"><svg class="icon" aria-hidden="true"><use href="#i-sun"/></svg> Hot days · harsh afternoon sun</div>
+            </div>
+            <div class="season-lists">
+              <div class="season-list">
+                <h4><span class="season-list-icon">01</span> Sow now</h4>
+                <ul><li>Okra and amaranth</li><li>Basil that loves the heat</li><li>Sunflowers, if you have height</li><li>Fast salad greens in shade</li></ul>
+              </div>
+              <div class="season-list">
+                <h4><span class="season-list-icon">02</span> Tend now</h4>
+                <ul><li>Water early morning, deeply</li><li>Mulch exposed soil with dry leaves</li><li>Group pots to shade each other</li><li>Move rooftops pots against a wall</li></ul>
+              </div>
+              <div class="season-list">
+                <h4><span class="season-list-icon">03</span> Watch for</h4>
+                <ul><li>Leaf scorch on thin-leaved plants</li><li>Spider mites in dry air</li><li>Soil pulling away from pot edges</li><li>Water sitting in saucers</li></ul>
+              </div>
+            </div>
+            <p class="city-note"><span>City note</span> On a hot rooftop, the shaded side of a wall can be 5°C cooler. Add a saucer — but never let roots sit in water overnight.</p>
+          </div>
+
+          <div class="season-panel" id="panel-monsoon" role="tabpanel" aria-labelledby="tab-monsoon" tabindex="0" hidden>
+            <div class="season-intro">
+              <p class="season-index">03</p>
+              <h3>Monsoon <span>Jul – Sep</span></h3>
+              <p class="season-desc">Free water, dramatic skies and the fastest way to lose a plant to root rot. This is drainage season, not watering season.</p>
+              <div class="season-weather"><svg class="icon" aria-hidden="true"><use href="#i-drop"/></svg> Heavy rain · high humidity</div>
+            </div>
+            <div class="season-lists">
+              <div class="season-list">
+                <h4><span class="season-list-icon">01</span> Sow now</h4>
+                <ul><li>Spinach and fenugreek</li><li>Coriander and spring onions</li><li>Lettuce in a covered spot</li><li>Root vegetables with good drainage</li></ul>
+              </div>
+              <div class="season-list">
+                <h4><span class="season-list-icon">02</span> Tend now</h4>
+                <ul><li>Check drainage holes weekly</li><li>Raise pots on feet or pebbles</li><li>Stake tall, top-heavy plants</li><li>Empty every saucer after rain</li></ul>
+              </div>
+              <div class="season-list">
+                <h4><span class="season-list-icon">03</span> Watch for</h4>
+                <ul><li>Root rot and yellowing leaves</li><li>Fungal spots on dense foliage</li><li>Mosquitoes breeding in standing water</li><li>Slugs and snails after dark</li></ul>
+              </div>
+            </div>
+            <p class="city-note"><span>City note</span> A covered balcony may need less water than you think. Stick to the finger test even when the sky is doing its thing.</p>
+          </div>
+
+          <div class="season-panel" id="panel-autumn" role="tabpanel" aria-labelledby="tab-autumn" tabindex="0" hidden>
+            <div class="season-intro">
+              <p class="season-index">04</p>
+              <h3>Autumn <span>Oct – Nov</span></h3>
+              <p class="season-desc">The sweet spot. Cooler nights, softer sun and happy roots. In many Indian cities, this is the best growing window of the year.</p>
+              <div class="season-weather"><svg class="icon" aria-hidden="true"><use href="#i-leaf"/></svg> Mild days · cool nights</div>
+            </div>
+            <div class="season-lists">
+              <div class="season-list">
+                <h4><span class="season-list-icon">01</span> Sow now</h4>
+                <ul><li>Peas, carrots and radish</li><li>Spinach and coriander</li><li>Calendula and sweet peas</li><li>More lettuce than you can eat</li></ul>
+              </div>
+              <div class="season-list">
+                <h4><span class="season-list-icon">02</span> Tend now</h4>
+                <ul><li>Give herbs a final mild feed</li><li>Take basil and mint cuttings</li><li>Move heavy pots before winter</li><li>Refresh tired potting mix</li></ul>
+              </div>
+              <div class="season-list">
+                <h4><span class="season-list-icon">03</span> Watch for</h4>
+                <ul><li>Powdery mildew on dense growth</li><li>Shorter days slowing growth</li><li>Cooler nights and slower germination</li><li>Overwatering as growth slows</li></ul>
+              </div>
+            </div>
+            <p class="city-note"><span>City note</span> Use the mild weather to move heavy pots and check balcony waterproofing — not after the first winter rain.</p>
+          </div>
+
+          <div class="season-panel" id="panel-winter" role="tabpanel" aria-labelledby="tab-winter" tabindex="0" hidden>
+            <div class="season-intro">
+              <p class="season-index">05</p>
+              <h3>Winter <span>Dec – Jan</span></h3>
+              <p class="season-desc">Slow growth, clean air and a garden that asks for less. Protect tropical plants, cut back on water and let the year rest.</p>
+              <div class="season-weather"><svg class="icon" aria-hidden="true"><use href="#i-drop"/></svg> Cool, dry air · low light</div>
+            </div>
+            <div class="season-lists">
+              <div class="season-list">
+                <h4><span class="season-list-icon">01</span> Sow now</h4>
+                <ul><li>Lettuce and mustard greens</li><li>Peas in mild cities</li><li>Calendula and poppies</li><li>Garlic and onions in deeper pots</li></ul>
+              </div>
+              <div class="season-list">
+                <h4><span class="season-list-icon">02</span> Tend now</h4>
+                <ul><li>Water less — check before you pour</li><li>Protect tropical plants from cold snaps</li><li>Clean and sharpen your tools</li><li>Plan next spring's pot layout</li></ul>
+              </div>
+              <div class="season-list">
+                <h4><span class="season-list-icon">03</span> Watch for</h4>
+                <ul><li>Frost in northern cities</li><li>Dry indoor air near heaters</li><li>Overwatering in slow growth</li><li>Dust blocking light on leaves</li></ul>
+              </div>
+            </div>
+            <p class="city-note"><span>City note</span> Indoor plants near heaters need more humidity, not more water. Group them together and keep leaves clean.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ritual" id="ritual" aria-labelledby="ritual-title">
+      <div class="ritual-pattern" aria-hidden="true"></div>
+      <div class="container ritual-grid">
+        <div class="ritual-copy" data-reveal>
+          <p class="kicker">05 <span>/</span> The weekly reset</p>
+          <h2 class="display" id="ritual-title">Fifteen minutes.<br><em>Once a week.</em></h2>
+          <p class="ritual-lede">The garden doesn't need you to be perfect. It needs you to show up. This short Sunday routine catches most problems before they become a whole thing.</p>
+          <div class="ritual-time">
+            <span class="ritual-clock"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg></span>
+            <p><strong>15 minutes</strong><span>Less time than one scroll hole.</span></p>
+          </div>
+        </div>
+
+        <div class="checklist-card" data-reveal>
+          <div class="checklist-head">
+            <div>
+              <p class="checklist-eyebrow">Sunday reset</p>
+              <h3>This week's garden</h3>
+            </div>
+            <p class="checklist-count" data-check-count aria-hidden="true">0 / 6</p>
+          </div>
+
+          <div class="progress" role="progressbar" aria-label="Weekly reset progress" aria-valuemin="0" aria-valuemax="6" aria-valuenow="0" data-progress>
+            <span data-progress-bar></span>
+          </div>
+          <p class="sr-only" aria-live="polite" data-check-status></p>
+
+          <ul class="checklist" data-checklist>
             <li>
-              <span class="task-num">01</span>
-              <div><b>Test the soil</b><span>A $15–$30 lab test tells you pH, phosphorus, and potassium. Skip guessing.</span></div>
+              <label>
+                <input type="checkbox" value="thumb">
+                <span class="check-box" aria-hidden="true"><svg class="icon"><use href="#i-leaf"/></svg></span>
+                <span class="check-label">Thumb-test every pot<small>2 min</small></span>
+              </label>
             </li>
             <li>
-              <span class="task-num">02</span>
-              <div><b>Apply pre-emergent on time</b><span>Soil at 55°F and rising. Water it in lightly; don't disturb the barrier.</span></div>
+              <label>
+                <input type="checkbox" value="turn">
+                <span class="check-box" aria-hidden="true"><svg class="icon"><use href="#i-leaf"/></svg></span>
+                <span class="check-label">Turn pots a quarter turn<small>2 min</small></span>
+              </label>
             </li>
             <li>
-              <span class="task-num">03</span>
-              <div><b>First cut, lower deck</b><span>Clean up winter growth, then raise the deck for the rest of the season.</span></div>
+              <label>
+                <input type="checkbox" value="pinch">
+                <span class="check-box" aria-hidden="true"><svg class="icon"><use href="#i-leaf"/></svg></span>
+                <span class="check-label">Pinch back one leggy stem<small>3 min</small></span>
+              </label>
             </li>
             <li>
-              <span class="task-num">04</span>
-              <div><b>Repair winter damage</b><span>Rake matted spots, add topsoil to low areas, and seed thin patches if you must.</span></div>
+              <label>
+                <input type="checkbox" value="wipe">
+                <span class="check-box" aria-hidden="true"><svg class="icon"><use href="#i-leaf"/></svg></span>
+                <span class="check-label">Wipe the dusty leaves<small>3 min</small></span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" value="saucers">
+                <span class="check-box" aria-hidden="true"><svg class="icon"><use href="#i-leaf"/></svg></span>
+                <span class="check-label">Empty saucers and sweep<small>3 min</small></span>
+              </label>
+            </li>
+            <li>
+              <label>
+                <input type="checkbox" value="harvest">
+                <span class="check-box" aria-hidden="true"><svg class="icon"><use href="#i-leaf"/></svg></span>
+                <span class="check-label">Pick something to eat<small>2 min</small></span>
+              </label>
             </li>
           </ul>
-        </div>
 
-        <div class="season-panel" id="panel-summer" role="tabpanel" aria-labelledby="tab-summer" tabindex="0" hidden>
-          <div class="season-intro">
-            <span class="season-months">June – August</span>
-            <h3>Protect, don't push</h3>
-            <p>Heat is a stress test. Your job is to keep roots cool and avoid making
-              changes that force the grass to spend energy it doesn't have.</p>
-            <div class="season-photo">
-              <img src="https://images.unsplash.com/photo-1558904541-efa8c4a08931?auto=format&fit=crop&w=700&q=80" alt="Lush summer lawn bathed in sunlight" loading="lazy" width="460" height="168">
-            </div>
-            <div class="season-focus">
-              <b>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"></path>
-                </svg>
-                Focus this season
-              </b>
-              <p>Raise the mowing height by half an inch and water deeply twice a week.
-                Taller blades shade the soil and cut evaporation.</p>
-            </div>
-          </div>
-          <ul class="task-list">
-            <li>
-              <span class="task-num">01</span>
-              <div><b>Raise the deck</b><span>Cool-season grass: 3–4 in. Warm-season: keep to its normal range.</span></div>
-            </li>
-            <li>
-              <span class="task-num">02</span>
-              <div><b>Water deep, twice weekly</b><span>0.5–0.75 in per session, early morning. Measure, don't eyeball.</span></div>
-            </li>
-            <li>
-              <span class="task-num">03</span>
-              <div><b>Scout for pests</b><span>Pull on a brown patch — if it lifts like a carpet, check for grubs.</span></div>
-            </li>
-            <li>
-              <span class="task-num">04</span>
-              <div><b>Leave the clippings</b><span>Mulched clippings return nitrogen and moisture. Bag only long or wet grass.</span></div>
-            </li>
-          </ul>
-        </div>
-
-        <div class="season-panel" id="panel-fall" role="tabpanel" aria-labelledby="tab-fall" tabindex="0" hidden>
-          <div class="season-intro">
-            <span class="season-months">September – November</span>
-            <h3>The main event</h3>
-            <p>For cool-season lawns, fall is the most important season of the year. Warm
-              soil and cool air are exactly what roots and new seed need.</p>
-            <div class="season-photo">
-              <img src="https://images.unsplash.com/photo-1761819620447-10593214fdc7?auto=format&fit=crop&w=700&q=80" alt="Fall lawn overseeding and seasonal leaf raking" loading="lazy" width="460" height="168">
-            </div>
-            <div class="season-focus">
-              <b>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 21v-8"></path>
-                  <path d="M12 13c0-4 3-7 7-7 0 4-3 7-7 7Z"></path>
-                  <path d="M12 15c0-3-2-5-5-5 0 3 2 5 5 5Z"></path>
-                </svg>
-                Focus this season
-              </b>
-              <p>Aerate, overseed, and feed within a few weeks of each other. This is the
-                window that fixes thin turf for next summer.</p>
-            </div>
-          </div>
-          <ul class="task-list">
-            <li>
-              <span class="task-num">01</span>
-              <div><b>Core aerate</b><span>Pull plugs when the soil is moist. Best done the same day as overseeding.</span></div>
-            </li>
-            <li>
-              <span class="task-num">02</span>
-              <div><b>Overseed thin areas</b><span>Match seed to your grass and light. Keep it moist for two to three weeks.</span></div>
-            </li>
-            <li>
-              <span class="task-num">03</span>
-              <div><b>Feed for roots</b><span>A fall feeding builds carbohydrate reserves for winter — not top growth.</span></div>
-            </li>
-            <li>
-              <span class="task-num">04</span>
-              <div><b>Rake leaves promptly</b><span>Leaves left in place smother turf and invite snow mold. Chop and compost.</span></div>
-            </li>
-          </ul>
-        </div>
-
-        <div class="season-panel" id="panel-winter" role="tabpanel" aria-labelledby="tab-winter" tabindex="0" hidden>
-          <div class="season-intro">
-            <span class="season-months">December – February</span>
-            <h3>Rest and plan</h3>
-            <p>Mostly, leave it alone. Dormant grass still needs light and air, but it does
-              not need fertilizer, traffic, or a well-meaning cleanup that tears it up.</p>
-            <div class="season-photo">
-              <img src="https://images.unsplash.com/photo-1619764847420-6b2aa9ee226e?auto=format&fit=crop&w=700&q=80" alt="Winter grass covered in crisp morning frost" loading="lazy" width="460" height="168">
-            </div>
-            <div class="season-focus">
-              <b>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 2v20M4 6l16 12M20 6 4 18"></path>
-                </svg>
-                Focus this season
-              </b>
-              <p>Stay off frost-covered grass — footprints break blades and leave brown
-                trails until spring. Use the downtime to plan and service equipment.</p>
-            </div>
-          </div>
-          <ul class="task-list">
-            <li>
-              <span class="task-num">01</span>
-              <div><b>Stay off frozen turf</b><span>No mowing, no raking, no playing on frost. Damage is slow to heal.</span></div>
-            </li>
-            <li>
-              <span class="task-num">02</span>
-              <div><b>Service the mower</b><span>Sharpen the blade, change the oil, replace the plug. Book it before spring rush.</span></div>
-            </li>
-            <li>
-              <span class="task-num">03</span>
-              <div><b>Plan next year</b><span>Order a soil test, note bare spots, and pick your seed before it sells out.</span></div>
-            </li>
-            <li>
-              <span class="task-num">04</span>
-              <div><b>Check drainage</b><span>Clear gutters and low spots so meltwater doesn't sit on the lawn.</span></div>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= MOWING ================= -->
-    <section class="section" id="mowing" aria-labelledby="mowing-title">
-      <div class="container">
-        <div class="split">
-          <div>
-            <span class="eyebrow">Mowing</span>
-            <h2 id="mowing-title">The cheapest upgrade is a sharp blade</h2>
-            <p class="lede">Dull blades tear grass instead of cutting it. The torn tips brown
-              out, lose water, and invite disease — which is why a lawn can look worse after
-              mowing even when you did everything else right.</p>
-
-            <ul class="tip-list">
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"></path></svg>
-                <span><b>Sharpen every 8–10 mowing hours.</b> That is roughly once a month in peak season.</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"></path></svg>
-                <span><b>Cut no more than one-third.</b> If the grass got away from you, take it down in two passes.</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"></path></svg>
-                <span><b>Alternate direction.</b> Changing the pattern each cut keeps ruts away and helps blades stand up.</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 13l4 4L19 7"></path></svg>
-                <span><b>Mow dry grass.</b> Wet clippings clump, smother, and dull the blade faster.</span>
-              </li>
-            </ul>
-
-            <div class="mowing-media">
-              <img src="https://images.unsplash.com/photo-1458245201577-fc8a130b8829?auto=format&fit=crop&w=800&q=80" alt="Sharp mower blades cleanly cutting green lawn" loading="lazy" width="520" height="195">
-            </div>
-          </div>
-
-          <div class="table-card">
-            <div class="table-head">
-              <h3>Mowing heights by grass type</h3>
-            </div>
-            <div class="table-scroll">
-              <table>
-                <caption class="visually-hidden">Recommended mowing height and frequency by grass species</caption>
-                <thead>
-                  <tr>
-                    <th scope="col">Grass</th>
-                    <th scope="col">Type</th>
-                    <th scope="col">Height</th>
-                    <th scope="col">Frequency</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>Tall fescue</td>
-                    <td><span class="badge badge-cool">Cool</span></td>
-                    <td class="num">2.5–3.5 in</td>
-                    <td class="num">Weekly</td>
-                  </tr>
-                  <tr>
-                    <td>Kentucky bluegrass</td>
-                    <td><span class="badge badge-cool">Cool</span></td>
-                    <td class="num">2.5–3 in</td>
-                    <td class="num">5–7 days</td>
-                  </tr>
-                  <tr>
-                    <td>Fine fescue</td>
-                    <td><span class="badge badge-cool">Cool</span></td>
-                    <td class="num">3–3.5 in</td>
-                    <td class="num">7–10 days</td>
-                  </tr>
-                  <tr>
-                    <td>Bermudagrass</td>
-                    <td><span class="badge badge-warm">Warm</span></td>
-                    <td class="num">1–2 in</td>
-                    <td class="num">5–7 days</td>
-                  </tr>
-                  <tr>
-                    <td>Zoysia</td>
-                    <td><span class="badge badge-warm">Warm</span></td>
-                    <td class="num">1.5–2.5 in</td>
-                    <td class="num">7–10 days</td>
-                  </tr>
-                  <tr>
-                    <td>St. Augustine</td>
-                    <td><span class="badge badge-warm">Warm</span></td>
-                    <td class="num">3.5–4 in</td>
-                    <td class="num">Weekly</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-            <p class="table-note">Ranges are for actively growing season. Raise the deck by
-              about half an inch during heat or drought stress, then return to normal.</p>
+          <div class="checklist-foot">
+            <p data-check-message>Progress saves on this device. No account needed.</p>
+            <button class="reset-link" type="button" data-check-reset>Reset</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= WATERING ================= -->
-    <section class="section section--deep" id="watering" aria-labelledby="watering-title">
-      <div class="container">
-        <div class="water-grid">
-          <div>
-            <span class="eyebrow">Watering</span>
-            <div class="section-head" style="margin-bottom: 0;">
-              <h2 id="watering-title">Inches, not minutes</h2>
-              <p>Sprinkler output varies wildly, so timers lie. The only number that
-                matters is how many inches of water actually reach the soil each week.</p>
-            </div>
-
-            <ol class="steps">
-              <li class="step">
-                <span class="step-num">1</span>
-                <div><b>Measure once with a can</b><p>Set straight-sided cans around a zone, run the sprinkler 15 minutes, and measure the depth. Now you know your precipitation rate.</p></div>
-              </li>
-              <li class="step">
-                <span class="step-num">2</span>
-                <div><b>Target 1–1.5 inches per week</b><p>Include rainfall. In mild weather, aim low; in heat or wind, move toward the top of the range.</p></div>
-              </li>
-              <li class="step">
-                <span class="step-num">3</span>
-                <div><b>Split it into two sessions</b><p>Two half-inch soaks beat six light sprinkles. Water long enough to reach the root zone, then let the surface dry.</p></div>
-              </li>
-              <li class="step">
-                <span class="step-num">4</span>
-                <div><b>Water early, 5–9 a.m.</b><p>Less wind, less evaporation, and blades dry before nightfall. Evening watering invites fungus.</p></div>
-              </li>
-              <li class="step">
-                <span class="step-num">5</span>
-                <div><b>Ease off in fall</b><p>Cooler air means lower demand. Dormant grass needs very little; overs watering is a common winter mistake.</p></div>
-              </li>
-            </ol>
-
-            <div class="water-media">
-              <img src="https://images.unsplash.com/photo-1780772415259-bda4359205a8?auto=format&fit=crop&w=800&q=80" alt="Early morning sprinkler watering green turf deeply" loading="lazy" width="520" height="185">
-            </div>
-          </div>
-
-          <div class="calc">
-            <div class="calc-head">
-              <h3>Weekly water calculator</h3>
-              <span>Estimate</span>
-            </div>
-
-            <div class="field">
-              <label for="calc-area">Lawn area <output id="area-out" for="calc-area">3,000 sq ft</output></label>
-              <input type="range" id="calc-area" min="500" max="15000" step="250" value="3000">
-            </div>
-
-            <div class="field">
-              <label for="calc-inches">Water per week <output id="inches-out" for="calc-inches">1.0 in</output></label>
-              <input type="range" id="calc-inches" min="0.5" max="2" step="0.1" value="1">
-            </div>
-
-            <div class="field">
-              <label for="calc-sessions">Watering sessions</label>
-              <select id="calc-sessions">
-                <option value="1">1× per week (heavy soak)</option>
-                <option value="2" selected>2× per week (recommended)</option>
-                <option value="3">3× per week (sandy soil)</option>
-              </select>
-            </div>
-
-            <div class="calc-results" aria-live="polite">
-              <div class="result">
-                <strong id="result-week">1,870</strong>
-                <span>Gallons / week</span>
-              </div>
-              <div class="result">
-                <strong id="result-session">935</strong>
-                <span>Gallons / session</span>
-              </div>
-            </div>
-            <p class="calc-note">Rough estimate using 0.623 gallons per square foot per
-              inch of water. Adjust for rainfall and your sprinkler's actual output.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= FIXES ================= -->
-    <section class="section" id="fixes" aria-labelledby="fixes-title">
-      <div class="container">
-        <div class="section-head">
-          <span class="eyebrow">Troubleshooting</span>
-          <h2 id="fixes-title">Read the symptom, then the fix</h2>
-          <p>Most lawn issues fall into a handful of patterns. Before you buy a product,
-            work out which pattern you are looking at.</p>
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="container faq-grid">
+        <div class="faq-intro" data-reveal>
+          <p class="kicker">06 <span>/</span> Common questions</p>
+          <h2 class="display" id="faq-title">The things <em>everyone asks.</em></h2>
+          <p>Still stuck? Send us a photo of the crime scene. We are nice about it.</p>
+          <a class="text-link" href="mailto:hello@gardenwow.co">hello@gardenwow.co <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
 
-        <div class="trouble-grid">
-          <article class="trouble">
-            <div class="trouble-media">
-              <img src="https://images.unsplash.com/photo-1517921684659-7d5b995aaa44?auto=format&fit=crop&w=500&q=80" alt="Brown patches in lawn grass" loading="lazy" width="340" height="136">
-            </div>
-            <div class="trouble-body">
-              <h3>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 3v3M12 21a6 6 0 0 0 6-6c0-3-2.5-5.5-6-9-3.5 3.5-6 6-6 9a6 6 0 0 0 6 6Z"></path>
-                </svg>
-                Brown patches
-              </h3>
-              <p class="symptom"><b>Look for:</b> irregular dry spots, a ragged cut, or turf that lifts easily. Drought, a dull blade, fungus, and grubs all look similar.</p>
-              <p class="fix"><b>Fix:</b> Sharpen the blade, check watering depth, and do the tug test. Treat grubs only when you find them.</p>
-            </div>
-          </article>
-
-          <article class="trouble">
-            <div class="trouble-media">
-              <img src="https://images.unsplash.com/photo-1592417817098-8f3d6910985c?auto=format&fit=crop&w=500&q=80" alt="Lawn grass yellowing inspection" loading="lazy" width="340" height="136">
-            </div>
-            <div class="trouble-body">
-              <h3>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <circle cx="12" cy="12" r="4"></circle>
-                  <path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"></path>
-                </svg>
-                Yellowing turf
-              </h3>
-              <p class="symptom"><b>Look for:</b> uniform pale color, streaks from a spreader, or spots from pets. Nitrogen, iron, pH, and urine can all cause it.</p>
-              <p class="fix"><b>Fix:</b> Feed lightly with slow-release nitrogen; water dog spots deeply. If it persists, test pH before adding more.</p>
-            </div>
-          </article>
-
-          <article class="trouble">
-            <div class="trouble-media">
-              <img src="https://images.unsplash.com/photo-1686509335228-3c37fd07610f?auto=format&fit=crop&w=500&q=80" alt="Weeds and dandelions sprouting in turf" loading="lazy" width="340" height="136">
-            </div>
-            <div class="trouble-body">
-              <h3>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 21v-8"></path>
-                  <path d="M12 13c0-4 3-7 7-7 0 4-3 7-7 7Z"></path>
-                  <path d="M12 15c0-3-2-5-5-5 0 3 2 5 5 5Z"></path>
-                </svg>
-                Weeds moving in
-              </h3>
-              <p class="symptom"><b>Look for:</b> dandelions, crabgrass, or clover in thin or compacted areas. Weeds fill space that grass is not holding.</p>
-              <p class="fix"><b>Fix:</b> Aerate, overseed, and mow taller. Spot-treat what remains instead of spraying the entire lawn.</p>
-            </div>
-          </article>
-
-          <article class="trouble">
-            <div class="trouble-media">
-              <img src="https://images.unsplash.com/photo-1762770663528-a59494ba6331?auto=format&fit=crop&w=500&q=80" alt="Moss invading damp shaded lawn grass" loading="lazy" width="340" height="136">
-            </div>
-            <div class="trouble-body">
-              <h3>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M4 18c2-4 4-6 8-6s6 2 8 6"></path>
-                  <path d="M4 13c2-3 4-4 8-4s6 1 8 4"></path>
-                  <path d="M8 21h8"></path>
-                </svg>
-                Moss in the lawn
-              </h3>
-              <p class="symptom"><b>Look for:</b> moss in shade, at lawn edges, or where water sits. It signals low light, low pH, or soggy soil.</p>
-              <p class="fix"><b>Fix:</b> Improve drainage and airflow, lime only if a test says so, and seed with a shade-tolerant mix.</p>
-            </div>
-          </article>
-
-          <article class="trouble">
-            <div class="trouble-media">
-              <img src="https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=500&q=80" alt="Mushrooms popping up in green grass after rain" loading="lazy" width="340" height="136">
-            </div>
-            <div class="trouble-body">
-              <h3>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 3v18"></path>
-                  <path d="M5 8c2 0 3-1 3-3 2 0 4 1.5 4 4 0-2.5 2-4 4-4 0 2 1 3 3 3"></path>
-                  <path d="M5 16c2 0 3 1 3 3 2 0 4-1.5 4-4 0 2.5 2 4 4 4 0-2 1-3 3-3"></path>
-                </svg>
-                Mushrooms
-              </h3>
-              <p class="symptom"><b>Look for:</b> caps popping up after rain or irrigation. Usually harmless decomposers feeding on buried organic matter.</p>
-              <p class="fix"><b>Fix:</b> Knock them over or mow them. Improve airflow and avoid overwatering — no fungicide needed.</p>
-            </div>
-          </article>
-
-          <article class="trouble">
-            <div class="trouble-media">
-              <img src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=500&q=80" alt="Thick thatch and compacted root layer in lawn" loading="lazy" width="340" height="136">
-            </div>
-            <div class="trouble-body">
-              <h3>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M3 7h18M3 12h18M3 17h18"></path>
-                  <path d="M7 4v16M17 4v16"></path>
-                </svg>
-                Spongy, thick thatch
-              </h3>
-              <p class="symptom"><b>Look for:</b> a springy layer more than half an inch thick between grass and soil. Water and air struggle to get through.</p>
-              <p class="fix"><b>Fix:</b> Core aerate in early fall, dethatch if needed, and stop overfertilizing. Let clippings break down.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= CHECKLIST ================= -->
-    <section class="section section--tint" id="checklist" aria-labelledby="checklist-title">
-      <div class="container">
-        <div class="check-wrap">
-          <div>
-            <span class="eyebrow">The maintenance list</span>
-            <h2 id="checklist-title">Your lawn's standing checklist</h2>
-            <p class="lede">Twelve habits that cover almost everything. Tick them off as you
-              go — your progress is saved in this browser only.</p>
-
-            <div class="progress-head">
-              <span id="progress-label">0 of 12 done</span>
-              <span id="progress-pct">0%</span>
-            </div>
-            <div class="progress" role="progressbar" aria-labelledby="progress-label" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0" id="progress-track">
-              <div class="progress-bar" id="progress-bar"></div>
-            </div>
-            <div class="check-actions">
-              <button class="reset-btn" type="button" id="reset-checklist">Reset list</button>
-              <span class="check-hint">Saved locally — no account needed.</span>
-            </div>
-          </div>
-
-          <div class="checklist" id="checklist">
-            <label class="check">
-              <input type="checkbox" data-key="blade">
-              <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"></path></svg></span>
-              <span class="text">Sharpen or replace the mower blade</span>
-            </label>
-            <label class="check">
-              <input type="checkbox" data-key="water">
-              <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"></path></svg></span>
-              <span class="text">Measure watering with a can or rain gauge</span>
-            </label>
-            <label class="check">
-              <input type="checkbox" data-key="scout">
-              <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"></path></svg></span>
-              <span class="text">Scout for weeds, grubs, and bare spots</span>
-            </label>
-            <label class="check">
-              <input type="checkbox" data-key="height">
-              <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"></path></svg></span>
-              <span class="text">Mow at the right height for your grass</span>
-            </label>
-            <label class="check">
-              <input type="checkbox" data-key="leaves">
-              <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"></path></svg></span>
-              <span class="text">Clear leaves and thick clippings</span>
-            </label>
-            <label class="check">
-              <input type="checkbox" data-key="soil">
-              <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"></path></svg></span>
-              <span class="text">Test soil pH and nutrients</span>
-            </label>
-            <label class="check">
-              <input type="checkbox" data-key="aerate">
-              <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"></path></svg></span>
-              <span class="text">Aerate compacted or high-traffic areas</span>
-            </label>
-            <label class="check">
-              <input type="checkbox" data-key="overseed">
-              <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"></path></svg></span>
-              <span class="text">Overseed thin or bare patches</span>
-            </label>
-            <label class="check">
-              <input type="checkbox" data-key="feed">
-              <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"></path></svg></span>
-              <span class="text">Apply slow-release fertilizer on schedule</span>
-            </label>
-            <label class="check">
-              <input type="checkbox" data-key="edges">
-              <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"></path></svg></span>
-              <span class="text">Clear debris from drains and lawn edges</span>
-            </label>
-            <label class="check">
-              <input type="checkbox" data-key="irrigation">
-              <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"></path></svg></span>
-              <span class="text">Check hoses, heads, and timers</span>
-            </label>
-            <label class="check">
-              <input type="checkbox" data-key="log">
-              <span class="box" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 13 4 4L19 7"></path></svg></span>
-              <span class="text">Log what worked this month</span>
-            </label>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= FAQ ================= -->
-    <section class="section" id="faq" aria-labelledby="faq-title">
-      <div class="container">
-        <div class="section-head section-head--center">
-          <span class="eyebrow">Questions</span>
-          <h2 id="faq-title">Quick answers</h2>
-          <p>The things people ask most before their first full season.</p>
-        </div>
-
-        <div class="faq">
-          <details>
-            <summary>
-              How often should I water my lawn?
-              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
-            </summary>
-            <p>Aim for 1 to 1.5 inches per week, including rainfall, delivered in one or two
-              deep sessions. Water early in the morning so the blades dry during the day.
-              Sandy soil may need three shorter sessions; clay may need one slow soak.</p>
+        <div class="faq-list" data-reveal>
+          <details name="faq">
+            <summary><span>I only have a north-facing window. Can I still grow?</span><span class="faq-plus" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Yes — but choose for shade, not hope. Snake plant, ZZ plant, pothos and peace lily tolerate low light. They will grow more slowly and need less water. If you want herbs or vegetables, you will need a grow light or a brighter spot.</p></div>
           </details>
-
-          <details>
-            <summary>
-              When is the best time to fertilize?
-              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
-            </summary>
-            <p>For cool-season grass, the most important feeding is early fall, with a
-              lighter one in late spring. Warm-season grass prefers late spring through
-              summer, while it is actively growing. Avoid feeding dormant or heat-stressed
-              turf.</p>
+          <details name="faq">
+            <summary><span>How often should I water?</span><span class="faq-plus" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>There is no universal schedule. Check 3 cm down. In summer, a small balcony pot may need water daily; in monsoon, twice a week may be plenty. When in doubt, check the soil. When in real doubt, wait a day.</p></div>
           </details>
-
-          <details>
-            <summary>
-              How short should I mow?
-              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
-            </summary>
-            <p>Follow your grass type: roughly 2.5–3.5 inches for cool-season lawns and
-              1–4 inches for warm-season lawns depending on species. Whatever the number,
-              never remove more than a third of the blade in one pass.</p>
+          <details name="faq">
+            <summary><span>My balcony gets harsh afternoon sun. What survives?</span><span class="faq-plus" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Aloe, jade, bougainvillea, marigold, chilli, curry leaf and most succulents handle it well. Use shade cloth or move pots behind a wall between noon and 4pm in peak summer. Even sun-lovers appreciate a break from reflected heat.</p></div>
           </details>
-
-          <details>
-            <summary>
-              How do I fix a bare patch?
-              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
-            </summary>
-            <p>Remove the dead material, loosen the top inch of soil, and seed at the rate
-              on the label. Keep it consistently moist — not soaking — for two to three
-              weeks. Early fall is the best window for cool-season grass; late spring works
-              for warm-season grass.</p>
+          <details name="faq">
+            <summary><span>Is a balcony garden safe for the building?</span><span class="faq-plus" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Keep pots within your building's load limits, never hang weight over a railing without professional advice, secure pots against wind, and check the rules and waterproofing. Saucers and drainage matter more than aesthetics. When in doubt, ask someone qualified — not the internet.</p></div>
           </details>
-
-          <details>
-            <summary>
-              Do I really need a soil test?
-              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
-            </summary>
-            <p>Yes, every two to three years. It costs less than a bag of fertilizer and
-              tells you whether you need lime, phosphorus, or nothing at all. Without it,
-              you are guessing — and over-applying is common.</p>
+          <details name="faq">
+            <summary><span>What is the easiest edible to start with?</span><span class="faq-plus" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Mint, basil, spring onion, coriander and lettuce. Buy a healthy seedling rather than seed if you want a quick win. Give mint its own pot — it is wonderful and absolutely relentless.</p></div>
           </details>
-
-          <details>
-            <summary>
-              Can I mow in the rain or right after?
-              <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
-            </summary>
-            <p>Wait if you can. Wet grass clumps, clogs the deck, and tears instead of
-              cutting cleanly. If you must mow, raise the deck and plan to sharpen the
-              blade sooner. Never mow frost-covered grass at all.</p>
+          <details name="faq">
+            <summary><span>Do I need special soil or fertilizer?</span><span class="faq-plus" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Yes to potting mix (not garden soil), compost, and a balanced liquid feed. You do not need a shelf of products. A loose mix, proper drainage and half-strength feed get you most of the way.</p></div>
+          </details>
+          <details name="faq">
+            <summary><span>Small black flies around my pots. Help?</span><span class="faq-plus" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Fungus gnats usually mean damp soil and rich organic matter. Let the top 3 cm dry out, empty the saucers, and use yellow sticky traps to break the cycle. For persistent infestations, a Bti-based product can help — follow the label.</p></div>
+          </details>
+          <details name="faq">
+            <summary><span>I travel a lot. Can I still garden?</span><span class="faq-plus" aria-hidden="true"></span></summary>
+            <div class="faq-answer"><p>Choose forgiving plants: snake plant, ZZ plant, succulents or established herbs. Group pots in shade, water deeply before you leave, and skip complicated self-watering gadgets until you have tested them. A neighbour with a key is still the best technology.</p></div>
           </details>
         </div>
       </div>
     </section>
 
-    <!-- ================= CTA ================= -->
-    <section class="cta-section">
-      <div class="container">
-        <div class="cta">
-          <div>
-            <h2>Do one season properly. The lawn will remember.</h2>
-            <p>Start with soil and mowing, add water and timing, and most of the expensive
-              products become unnecessary. Keep the checklist handy and revisit it monthly.</p>
-          </div>
-          <a class="btn btn-light" href="#checklist">
-            Open the checklist
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
-          </a>
+    <section class="closing" aria-labelledby="closing-title">
+      <div class="container closing-inner">
+        <p class="kicker" data-reveal>Ready when you are</p>
+        <h2 class="closing-title" id="closing-title" data-reveal>Grow something that makes you <em>look twice.</em></h2>
+        <p class="closing-copy" data-reveal>Start with one pot, one windowsill, one small experiment. The rest is just showing up.</p>
+        <div class="closing-actions" data-reveal>
+          <a class="btn btn--dark" href="#ritual">Take the 15-minute reset <span class="btn-arrow"><svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+          <a class="text-link" href="#match">Find your plant match <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+        <p class="closing-note" data-reveal>No email. No signup. Just start.</p>
+        <div class="closing-doodle" aria-hidden="true">
+          <svg viewBox="0 0 900 120" preserveAspectRatio="none"><path d="M10 80C170 10 340 110 470 55S760 20 890 60"/></svg>
         </div>
       </div>
     </section>
@@ -921,63 +734,46 @@
 
   <footer class="site-footer">
     <div class="container">
-      <div class="footer-grid">
+      <div class="footer-top">
         <div class="footer-brand">
-          <a class="brand" href="index.html" aria-label="igreenlawn home">
-            <span class="brand-mark" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 20C4 11 10 5 20 4c0 10-6 16-16 16Z"></path>
-                <path d="M4 20c3-5 7-8 12-10"></path>
-              </svg>
-            </span>
-            <span class="brand-name"><em>i</em>greenlawn</span>
+          <a class="brand brand--footer" href="index.html" aria-label="GardenWow — home">
+            <span class="brand-mark"><svg class="icon" aria-hidden="true"><use href="#i-logo"/></svg></span>
+            <span class="brand-word">garden<em>wow</em></span>
           </a>
-          <p>A practical field guide for homeowners who want a healthier lawn without the
-            guesswork, the jargon, or the twelve-step program.</p>
+          <p>Small-space growing,<br>honestly told.</p>
+          <p class="footer-fine">An independent city-gardening guide. Grown in India, useful anywhere with a windowsill.</p>
         </div>
 
-        <div class="footer-col">
-          <h3>The guide</h3>
-          <ul>
-            <li><a href="#guide">Six pillars</a></li>
-            <li><a href="#seasons">Season planner</a></li>
-            <li><a href="#mowing">Mowing heights</a></li>
-            <li><a href="#watering">Watering</a></li>
-            <li><a href="#fixes">Troubleshooting</a></li>
-          </ul>
-        </div>
+        <nav class="footer-nav" aria-label="Explore">
+          <p>Explore</p>
+          <a href="#why">The why</a>
+          <a href="#guide">The field guide</a>
+          <a href="#match">Plant match</a>
+          <a href="#seasons">City seasons</a>
+          <a href="#ritual">Weekly reset</a>
+        </nav>
 
-        <div class="footer-col">
-          <h3>Tools</h3>
-          <ul>
-            <li><a href="#checklist">Maintenance checklist</a></li>
-            <li><a href="#watering">Water calculator</a></li>
-            <li><a href="#faq">Quick answers</a></li>
-            <li><a href="mailto:hello@igreenlawn.com">Contact us</a></li>
-          </ul>
-        </div>
+        <nav class="footer-nav" aria-label="The fine print">
+          <p>The fine print</p>
+          <a href="privacy.html">Privacy policy</a>
+          <a href="terms.html">Terms of service</a>
+          <a href="mailto:hello@gardenwow.co">Contact us</a>
+        </nav>
 
-        <div class="footer-col">
-          <h3>Legal</h3>
-          <ul>
-            <li><a href="terms.html">Terms of use</a></li>
-            <li><a href="privacy.html">Privacy policy</a></li>
-            <li><a href="privacy.html#cookies">Cookies</a></li>
-          </ul>
+        <div class="footer-note">
+          <p>Field notes, not hot air.</p>
+          <p>We do not sell your data, and we do not pretend every plant will survive. Read the <a href="privacy.html">privacy policy</a> if you like that sort of thing.</p>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>© <span id="year">2026</span> igreenlawn. General information only — not a
-          substitute for advice from a local lawn care or horticultural professional.</p>
-        <div class="footer-legal">
-          <a href="terms.html">Terms</a>
-          <a href="privacy.html">Privacy</a>
-        </div>
+        <p>© <span data-year>2026</span> GardenWow. All rights reserved.</p>
+        <p class="footer-credit">Photography via <a href="https://www.pexels.com/" target="_blank" rel="noopener noreferrer">Pexels</a>.</p>
+        <a class="back-top" href="#top" aria-label="Back to top">Back to top <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"/></svg></a>
       </div>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="assets/script.js" defer></script>
 </body>
 </html>
